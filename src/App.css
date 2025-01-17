@@ -18,7 +18,7 @@ body {
 }
 
 .land:hover {
-  fill: #ffa;
+  fill: #ff0000;
   transition: all 0.25s;
   -webkit-transition: all 0.25s;
   -moz-transition: all 0.25s;
@@ -31,7 +31,9 @@ body {
 }
 
 .hoverTitle{
-  fill: #fff;
+  background-color:#ffffffb7 ;
+  border: 1px solid #fff;
+  padding: 5px;
   font-size: .8rem;
   font-weight: bold;
   text-anchor: middle;

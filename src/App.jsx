@@ -2,13 +2,12 @@ import "./App.css";
 
 function App() {
   const hoverFunction = (data) => {
-    console.log(data);
     const hoverTitle = document.querySelector(".hoverTitle");
     hoverTitle.innerHTML = data.name;
     hoverTitle.style.position = "absolute";
     hoverTitle.style.display = "block";
-    hoverTitle.style.top = `${data.positionY}px`;
-    hoverTitle.style.left = `${data.positionX}px`;
+    hoverTitle.style.top = `${data.positionY - 30}px`;
+    hoverTitle.style.left = `${data.positionX - 20}px`;
   };
 
   const hoverOutFunction = () => {
@@ -16,8 +15,6 @@ function App() {
     hoverTitle.innerHTML = "";
     hoverTitle.style.display = "none";
   };
-
-
 
   return (
     <div>
@@ -30,7 +27,7 @@ function App() {
       >
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -44,7 +41,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -58,7 +55,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -72,7 +69,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -86,7 +83,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -100,7 +97,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -114,7 +111,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -128,7 +125,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -142,13 +139,21 @@ function App() {
         />
         <path
           className="land activeLand"
+          onMouseMove={(e) =>
+            hoverFunction({
+              name: e.target.attributes.title.nodeValue,
+              positionX: e.clientX,
+              positionY: e.clientY,
+            })
+          }
+          onMouseOut={hoverOutFunction}
           id="AZ-BA"
           title="Bakı"
           d="M773.48,277.97l-0.32,0.84l-0.99,-0.45l-1.07,-0.02l-2.16,0.59l-0.92,0.51l-1.68,2.7l-0.78,0.76l-0.98,0.35l-0.48,-0.4l1.49,-1.57l1.1,-1.6l-0.3,-0.58l0.05,-2.26l-0.45,-0.76l-1.75,-0.8l-0.14,-0.25l0.82,-0.68l-0.69,-1.1l-0.88,0.08l-0.8,-1.19l0.3,-0.25l1.42,0.49l1.62,2.21l1.45,1.01l0.25,1.1l0.36,0.35l0.51,-0.79l0,-0.79l-0.69,-3.28l1.15,0.46l1.1,0.98l0.44,-0.08l-0.16,-0.41l0.28,-0.49l2.73,2.99L773.48,277.97zM741.25,290.17l-0.24,2.63l0.14,4.17l-0.76,1.87l-0.45,-5.07l-0.46,-1.94l-0.91,-1.79l-0.22,-1.49l0.31,-1.68l-0.82,-3.64l-0.69,-1.13l-2.94,-3.44l-1.12,-0.3l-1.61,-1.45l-2.29,-0.48l-0.45,-0.32l-0.08,-0.4l-6.51,-3.44l-2.12,-0.7l-1.92,-0.25l-1.85,0.35l-0.98,-0.13l-2.37,-1.44l-3.83,-1.05l-2.56,-0.22l-1.83,0.59l-1.11,0.93l-0.9,2.1l-1.29,-0.23l-0.41,0.2l-0.86,-0.55l-1.01,-0.21l-1.64,0.14l-2.15,0.57l-0.81,0.64l-0.84,1.47l-0.93,0.71l-1,0.07l-2.45,-0.96l-0.95,-0.04l-2.59,0.65l-0.46,-2.06l-0.91,-1.43l-1.18,-1.05l-1.26,-0.54l-1.07,-0.92l-2.5,-0.45l-2.39,0.12l-1.37,-0.2l-1.18,0.38l-0.52,-0.36l-1.29,0.69l-0.89,0.16l-0.77,0.65l-0.39,0.88l0.07,1.08l0.44,0.87l0.26,0.22l0.82,-0.33l0.57,0.29l0.08,0.4l-0.4,0.48l-0.57,0.15l-0.03,2.26l-0.99,3.29l-0.66,0.78l-0.83,0.45l-1.58,-0.05l-1.11,-0.45l-2.9,0.55l-2.94,1.1l-1.5,0.94l-2.09,1.81l-1.26,0.45l-2.1,-0.45l-1.31,0.05l-1.46,0.43l-1.07,0.98l-1.29,2.15l-2.62,1.09l-1.27,1.04l-0.29,1.12l0.91,0.04l-0.15,0.38l-0.83,0.45l-0.71,0.02l-0.2,-1.47l-0.4,-0.09l-1.16,1.3l-4.33,1.79l-2.23,2.11l-2.12,0.86l-2.62,0.62l-0.96,0.6l-3.08,3.39l-2.46,0.59l-0.76,0.65l-0.28,0.53l-0.45,3.21l0.44,3.35l2.06,2.93l0.04,0.48l-1.64,0.26l-0.85,0.8l-1.55,-0.36l-1.28,1.24l-1.21,0.26l-0.97,1.27l-1.58,0.98l-0.47,1.46l0.28,1.92l0.84,2.79l1.42,2.95l1.09,1.63l3.01,3.31l2.04,3.27l-0.37,0.95l-2.91,2.36l-0.97,0.3l-1.42,1.1l-1.17,0.39l-0.87,0.97l-0.61,1.87l-0.25,2.13l1.3,6.63l1.1,2.75l0.75,0.91l0.66,1.44l-1.24,1.65l-1.52,0.32l-1.14,1.25l-0.56,3.63l-0.8,1.87l-1.47,1.77l-0.4,1.11l-0.12,2.43l0.4,3l1.59,5.95l0.94,1.5l1.35,3.25l-1.65,0.95l-1.55,0.36l-2.27,1.32l-1.79,1.7l-0.74,1.08l-0.59,-1.31l-0.14,-0.57l-0.2,-5.32l-0.14,-0.54l-0.63,-1.3l-0.14,-0.56l-0.1,-1.19l0.06,-11.17l0.27,-1.24l1.3,-1.98l-0.42,-4.98l-0.15,-3.27l-0.38,-0.92l-1.29,-1.56l-0.95,-1.75l-1.57,-1.97l-1.09,-2.22l-0.44,-3.12l-0.68,-1.33l-0.41,-1.61l-0.4,-0.81l-0.8,-0.62l2.33,-4.51l0.17,-1.04l0.05,-3.27l0.21,-1l0.54,-0.8l0.98,-1.13l0.98,-1.71l1.29,-1.52l0.38,-0.9l0.08,-1.05l-0.09,-1.05l-0.14,-0.5l-0.67,-1.3l-0.21,-1.02l-0.04,-1.63l0.09,-1.06l0.13,-0.49l1.11,-2.18l1.83,-2.32l2.23,-4.35l0.12,-0.49l-0.01,-1.02l-0.13,-0.5l-0.67,-1.31l-0.13,-0.5l-0.01,-1.02l0.13,-0.48l0.62,-0.9l1.25,-1.21l0.89,-0.72l0.24,-0.12l1.15,-0.56l0.13,-0.11l0.17,-0.09l0.17,-0.18l0.07,-0.06l0.03,-0.06l0.22,-0.24l1.33,-2.38l0.13,-0.5l0.21,-2.11l0.13,-0.49l0.64,-1.28l0.13,-0.51l0.03,-0.41l0.02,-0.13v-0.25l0.05,-0.86l-0.03,-14.18l-0.2,-1.06l-0.65,-1.3l-0.13,-0.5l-0.22,-3.22l-0.13,-0.5l-0.65,-1.31l-0.16,-1.01l0.15,-1l0.15,-0.3l0.52,-0.97l0.3,-0.71l0.11,-0.23l1.18,-2.05l0.47,-0.59l0.08,-0.06l0.35,-0.22l0.39,-0.17l0.44,-0.11l0.57,-0.06l3.54,-0.04h0.02l0.51,-0.11l1.32,-0.61l0.99,-0.27l0.21,-0.1l0.25,-0.07l0.1,-0.08l0.22,-0.1l0.51,-0.52l0.6,-0.97l0.27,-0.84l0.29,-1.56l0.53,-0.99l0.47,-0.61l0.57,-0.42l1.47,-0.45l1.33,-0.63l1.04,-0.16l1.03,0.09l1.55,0.71l1.91,0.38l0.01,0l0.01,0l3.56,-0.66l0.33,-0.19l1.44,-0.35l1.34,-0.61l0.51,-0.12l1.64,-0.06l5.02,0.12l1.08,0.12l0.5,0.14l1.29,0.73l1.75,0.81l0.39,0.09l0.01,0l0.01,0l0.39,-0.07l1.76,-0.72l1.27,-0.71l2.25,-1.02l3.15,-0.39l1.31,-0.61l2.03,-0.42l1.31,-0.61l0.5,-0.12l2.15,-0.16l0.51,-0.11l1.33,-0.59l2.1,-0.3l0.46,-0.16l0.15,-0.15l0.1,-0.05l0.15,-0.19l0.07,-0.07l0.16,-0.44l0,-0.98l-0.16,-0.45l-0.46,-0.47l-0.46,-0.18l-2.1,-0.4l-1.33,-0.65l-0.51,-0.14l-2.74,-0.19l-1.04,-0.21l-3.53,-1.84l-2.04,-0.53l-1.31,-0.67l-0.5,-0.13l-1.04,-0.02l0,0l-0.01,0l-0.5,0.11l-2.25,1.05L657,240.5l-1.31,0.42l-0.79,0.09l-0.41,-0.13l0.21,-0.66l0.08,-2.06l0.46,-2.29l1.41,-2.11l0.46,0.07l3.9,-0.55l1.34,0.15l2.23,1.38l2.38,0.52l8.26,-1.25l7.29,-1.61l3.63,-1.56l1.91,-0.47l1.71,0.03l1.92,1.32l1.54,0.17l4.99,-1.16l1.23,0.03l1.21,-0.63l0.32,0.92l-0.94,1.67l0.32,0.86l2.87,3.08l0.56,2.28l0.64,0.89l1.47,0.96l0.76,1.26l0.95,0.52l3.7,0.44l0.69,0.7l1.69,0.27l1.91,1.32l0.88,-0.52l0.59,0.01l0.86,0.55l1.28,-0.05l0.69,0.3l0.58,0.65l0.93,-0.2l1.55,2.68l0.06,1.08l1.28,1.27l0.29,1.14l1.28,0.83l0.36,1.7l0.8,0.35l0.73,-0.65l1,2.99l1,1.2l4.98,2.91l1.48,1.21l0.4,2.14l1.05,2.48l1.62,2.73l0.3,1.1l-0.14,3.76l0.22,2.36l-0.76,3.98l0.9,3.57l-0.21,1.45l0.76,1.26l0.17,2.08L741.25,290.17zM660.16,269.49l-1.22,-2.59l-0.92,-2.36l-0.38,-2.44l-2.9,-0.31l-3.66,-0.23l-4.27,0.31l-0.38,3.28l-0.69,2.9l-1.37,2.59l-0.92,2.59l-0.08,2.9l2.74,0.84l3.2,-2.59l2.44,-1.83l2.13,1.3l1.68,1.52l2.06,-1.14l0.91,-2.52L660.16,269.49zM646.54,332.53h-2.98l0.36,3.48l-0.67,1.12l0.37,0.58l2.02,-0.72l1.25,-0.07l0.42,-0.36l0.21,-0.83l-0.95,-1.99L646.54,332.53zM734.48,252.51l0.79,2.3l0.74,1.06l0.02,1.15l1.11,0.5l1.15,1.73l-1.16,0.49l0.13,0.37l0.87,0.08l0.7,2.37l0.47,3.14l0.43,0.08l-0.2,-3.47l0.72,-1.8l0.61,-0.58l-0.02,-0.68l-0.56,-1.76l-0.71,0.01l-0.64,-0.81l-0.31,-1.9l-0.42,-0.59l0.65,-1.49l-0.96,-2.95l-0.62,-0.57l-0.83,0l-0.84,-0.9l-0.62,0.41l-0.3,0.65l-0.57,0.19l-0.86,0.76l-0.86,-0.2l-0.16,0.42l0.55,0.92L734.48,252.51z"
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -162,7 +167,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -176,13 +181,21 @@ function App() {
         />
         <path
           className="land activeLand"
+          onMouseMove={(e) =>
+            hoverFunction({
+              name: e.target.attributes.title.nodeValue,
+              positionX: e.clientX,
+              positionY: e.clientY,
+            })
+          }
+          onMouseOut={hoverOutFunction}
           id="AZ-BAR"
           title="Bərdə"
           d="M307.29,303.81L306.99,301.2L306.78,300.44L306.1,299.07L305.96,298.52L305.87,297.36L305.89,285.52L306,284.37L306.15,283.83L306.8,282.54L306.91,282.05L306.94,281.54L306.74,280.68L306.32,280.06L305.69,279.63L304.79,279.38L302.02,279.11L301.27,278.81L300.52,278.3L299.81,277.57L299.39,276.95L297.74,273.41L296.87,272.08L296,271.3L293.96,269.99L293.75,269.61L293.36,268.2L292.73,266.88L292.6,266.37L292.36,263.53L291.83,260.87L291.83,260.87L294.25,257.72L295.45,256.32L296.21,254.67L297.59,252.21L300.33,248.41L302.44,248.1L304.46,248.47L305.8,249.33L307.06,250.61L308.16,251.55L309.25,251.9L312.11,250.08L314.7,248.11L315.86,247.02L316.62,245.79L316.99,244.9L317.5,243.19L318.74,238.66L318.74,238.66L320.97,242.86L321.35,243.93L321.6,246.08L321.75,246.58L322.36,247.51L323.59,248.78L324.48,249.52L324.96,249.8L326.4,250.21L326.77,250.41L328.07,252.45L328.56,253.06L329.51,253.79L331.67,255.05L332.19,255.6L332.52,256.3L332.62,256.81L332.74,261.74L333.06,262.69L334.14,264.81L335.09,265.84L336.22,266.53L337.15,266.76L339.3,266.96L339.72,267.12L339.93,267.3L340.06,267.83L339.44,269.65L339.33,270.73L339.41,272.32L339.77,273.03L340.47,273.43L341.89,273.97L343.58,274.9L344.2,275.38L344.67,275.99L345.79,278.11L346.12,280.18L346.28,280.63L346.73,281.1L347.18,281.28L348.82,281.51L349.97,281.81L352.26,282.96L352.26,282.96L350.67,285.85L350.6,286.36L350.67,286.85L351.04,287.47L351.76,288.15L352.18,288.38L352.67,288.48L354.96,288.15L357.18,288.26L357.64,288.39L357.94,288.64L358,289.03L357.86,289.42L357.86,289.42L355.43,291.96L354.29,293.02L353.74,293.36L352.4,293.97L350.24,295.85L349.45,296.4L345.51,298.41L341.84,301.67L340.13,302.49L337.59,304.67L334.76,306.16L333.95,306.29L332.71,306.12L330.27,304.71L329.52,303.82L327.72,300.5L327.23,299.95L326.63,299.68L326.01,299.73L325.67,299.9L325.16,300.47L325.04,300.83L325.08,301.28L325.25,301.76L326.13,303.31L326.13,303.31L320.97,303.77L318.7,303.79L317.12,303.52L315.8,302.86L315.3,302.71L314.22,302.59L312.55,302.56L311.22,302.7z"
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -196,7 +209,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -210,13 +223,21 @@ function App() {
         />
         <path
           className="land activeLand"
+          onMouseMove={(e) =>
+            hoverFunction({
+              name: e.target.attributes.title.nodeValue,
+              positionX: e.clientX,
+              positionY: e.clientY,
+            })
+          }
+          onMouseOut={hoverOutFunction}
           id="AZ-CAB"
           title="Cəbrayıl"
           d="M332.03,443.06L329,444.89L325.95,446.94L323.71,450.25L318.18,451.51L314.88,452.45L309,457.1L306.88,459.09L304.43,461.85L303.87,464.87L302.14,470.2L300.28,473.29L298.72,474.74L297.62,475.51L295.57,475.63L295.3,477.33L293.51,478.55L289.92,480.64L287.55,478.55L285.94,476.6L283.71,476.74L281.13,477.27L279,478.08L279,478.08L279.02,474.51L278.94,473.44L278.81,472.94L277.7,470.74L276.12,468.78L275.17,467.22L274.61,466.64L273.31,465.71L272.74,464.95L272.49,464.43L272.49,464.43L271.04,462.88L270.07,462.12L266.82,460.55L264.34,459.15L263.6,458.62L262.46,457.29L261.38,455.09L261.25,454.55L261.16,453.42L261.17,448.75L260.97,447.66L259.88,445.45L259.45,444.85L258.21,443.68L257.03,442.86L256.84,442.48L256.7,441.52L256.71,438.27L256.94,436.73L258.28,434.3L259.17,432.91L259.64,432.5L260.06,432.39L260.67,432.39L260.67,432.39L263.56,432.82L264.58,433.07L265.43,433.49L266.85,434.52L269.09,435.61L269.56,435.65L269.9,435.57L270.53,435.2L270.99,434.61L272.18,432.57L272.57,431.64L273.25,430.41L273.31,429.94L273.24,429.47L273.05,429.05L272.56,428.22L272.16,427.28L271.39,426.02L270.58,424.26L270.49,423.87L270.53,423.57L271.04,422.64L271.55,422.12L271.86,421.95L272.89,421.78L273.95,421.91L274.99,422.49L276.32,423.94L277.33,424.62L278,424.95L280.11,425.39L281.11,425.93L281.7,426.39L282.01,426.92L281.91,427.58L281.47,428.56L281.36,429.05L281.36,429.54L281.65,430.31L282.19,430.83L282.86,431.27L285.09,432.46L287.46,434.49L289.34,435.5L290.97,436.56L291.09,436.93L291.04,437.35L290.56,438.62L290.56,438.92L290.9,439.35L291.82,439.57L292.89,439.49L293.65,439.21L294.41,438.71L296.69,436.57L297.83,435.78L298.55,435.59L299.03,435.64L300.32,436.22L300.8,436.27L301.48,436.06L302,435.58L302.25,434.93L302.21,434.46L301.16,432.24L300.38,430.98L299.98,430.04L299.5,429.2L299.33,428.78L299.29,428.32L299.38,427.98L299.77,427.37L301.2,426.45L301.72,425.96L302.94,423.92L302.94,423.92L308.79,427.54L309.23,427.77L311.16,428.29L311.87,428.67L312.66,429.33L313.41,430.31L313.8,431.25L314.52,432.52L314.9,433.46L315.59,434.75L316.09,436.63L316.51,437.25L316.8,437.48L317.47,437.73L317.94,437.71L319.24,437.14L319.75,437.01L321.91,436.83L322.41,436.71L323.7,436.14L324.54,436.2L325.23,436.54L327.06,437.91L328.38,438.57L329.09,439.15L331,441.18L331.64,442.49z"
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -230,7 +251,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -244,7 +265,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -258,7 +279,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -272,7 +293,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -286,7 +307,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -300,7 +321,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -314,7 +335,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -328,7 +349,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -342,7 +363,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -356,7 +377,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -370,7 +391,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -384,7 +405,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -398,7 +419,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -412,7 +433,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -426,7 +447,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -440,7 +461,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -454,7 +475,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -468,7 +489,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -482,7 +503,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -496,7 +517,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -510,7 +531,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -524,7 +545,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -538,7 +559,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -552,7 +573,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -566,7 +587,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -580,7 +601,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -594,7 +615,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -608,7 +629,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -622,7 +643,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -636,7 +657,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -650,7 +671,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -664,7 +685,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -678,7 +699,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -692,7 +713,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -706,7 +727,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -720,7 +741,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -734,13 +755,21 @@ function App() {
         />
         <path
           className="land activeLand"
+          onMouseMove={(e) =>
+            hoverFunction({
+              name: e.target.attributes.title.nodeValue,
+              positionX: e.clientX,
+              positionY: e.clientY,
+            })
+          }
+          onMouseOut={hoverOutFunction}
           id="AZ-SAK"
           title="Şəki"
           d="M371.19,195l-2.64,-1.54l-2.23,-1.77l-2.47,-1.41l-3.19,-1.55l-1.27,-0.75l-0.96,-0.4l-3.5,-1.91l-0.96,-0.4l-2.46,-1.4l-1.14,-0.9l-5.36,-5.44l-0.96,-1.24l-0.4,-0.95l-0.73,-1.28l-0.38,-0.96l-0.69,-1.3l-0.18,-1.04l-0.04,-2.78l-0.22,-0.98l-0.45,-0.45l-0.45,-0.13l-0.49,-0.01l-0.5,0.1l-1.33,0.65l-0.5,0.1l-0.5,-0.01l-0.45,-0.14l-0.26,-0.19l-0.2,-0.26l-0.15,-0.46l-0.05,-1.05l0.21,-1.04l0.63,-1.29l0.04,-0.47l-0.24,-0.67l-0.22,-0.3l-0.61,-0.47l-3.29,-1.88l-0.53,-0.56l-0.33,-0.71l-0.15,-1.07l0.03,-1.65l0.21,-1.03l0.67,-1.29l0.13,-0.5l0.14,-2.72l0.19,-1.03l7.38,-14.49l0.45,-2.03l1.79,-3.48l0.13,-0.5l0.09,-1.08l0,-7.28l0.04,-2.37l0.13,-1.2l1.9,-5.08l-3.43,-1.55l-2.6,-0.94l-3.42,-2.03l-3.87,-2.69l-0.99,-1.1l-0.37,-2.03l-0.34,-3.69l-0.52,-1.16l0,-3.87l-0.22,-1.39l-0.48,-0.79l-0.83,-0.24l-1.91,0.34l-0.44,-0.06l-0.54,-0.43l-0.53,-0.59l-0.21,-1.34l0.26,-1.84l0.94,-1.84l0.6,-0.77l-0.03,-0.93l-0.82,-0.49L323.86,81l-0.99,-0.25l-0.58,-0.43l-0.59,-0.96l-0.26,-1.87l-0.41,-1.35l-0.81,-1.21l-0.55,-0.55l-0.44,-0.27l-2.01,9.71l-0.92,1.41l-1.54,1.54l-0.76,0.53l-3.68,1.91l-0.74,0.52l-0.93,1.02L308.04,92l-0.41,0.61l-1.11,1.02l-1.09,0.47l-2.66,0.33l-10.23,4.89l-2.04,0.42l-2.25,1.02l-2.8,1.53l-2.5,2.14l-1.86,0.96l-1.72,1.54l-0.74,0.86l-0.26,0.48l-0.2,1.03l-0.05,1.67l-0.13,1.07l-0.52,1.02l-0.53,0.45l-1.34,0.67l-1.61,1.22l-1.63,0.87l-0.47,0.56l-0.31,0.71l-0.16,1.72l0.04,6.5l-0.11,1.72L271.2,128l-0.65,1.3l-0.13,0.5l-0.25,3.26l-0.14,0.5l-0.65,1.3l-0.1,0.96l0.13,0.44l0.44,0.47l1.42,0.52l1.32,0.68l1.5,0.47l2.97,1.89l1.19,0.63l1.14,0.9l1.54,1.68l0.98,1.85l1.54,2.02l1.09,2.26l0.46,2.04l1.77,3.56l0.2,1.11l0,14.33l-0.09,1.84l-0.28,2.42l3.42,1.4l1.48,0.92l0.96,0.41l1.27,0.76l0.96,0.4l1.27,0.76l0.96,0.4l1.27,0.76l0.96,0.4l2.46,1.41l1.92,1.4l2.46,1.41l0.96,0.4l1.27,0.76l0.96,0.4l1.27,0.76l0.96,0.4l1.29,0.72l2.63,0.47l0.49,0.22l1.84,1.24l2.49,1.44l1.3,0.56l1.29,0.72l2.05,0.49l1.32,0.7l2.37,0.65l2.12,0.91l3.1,0.91l4.55,0.23l1.04,0.21l5.33,2.83l0.95,0.36l1.05,0.07l0.96,-0.22l0.49,-0.44l0.69,-1.05l0.71,-0.31l0.48,-0.01l0.48,0.1l1.3,0.66l2.04,0.53l1.31,0.69l1.91,0.58l1.55,0.94l0.43,0.21l0.48,0.1l0.84,-0.12l5.03,-1.53l0.79,-1.31l0.33,-0.29l0.43,-0.17l0.94,-0.02l0.45,0.12l1.32,0.74l0.5,0.13l0.67,-0.01l0.57,-0.28l0.31,-0.56l0.08,-1L371.19,195zM320.41,129.05l-2.32,0.96l-4.78,-0.82l-1.09,-2.46v-2.46l2.05,-2.59l2.32,-1.5l2.46,1.09l1.5,1.37l0.96,3.55L320.41,129.05z"
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -754,7 +783,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -768,7 +797,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -782,7 +811,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -796,7 +825,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -810,13 +839,21 @@ function App() {
         />
         <path
           className="land activeLand"
+          onMouseMove={(e) =>
+            hoverFunction({
+              name: e.target.attributes.title.nodeValue,
+              positionX: e.clientX,
+              positionY: e.clientY,
+            })
+          }
+          onMouseOut={hoverOutFunction}
           id="AZ-SKR"
           title="Şəmkir"
           d="M174.17,220.79L172.18,219.4L171.16,218.96L169.85,218.16L168.88,217.75L167.59,217L166.43,216.85L166.04,216.91L165.34,217.21L164.78,217.73L163.4,220.13L163.03,221.08L162.3,222.33L161.93,223.27L161.19,224.52L160.81,225.46L160.54,225.86L158.11,228.46L157.45,229.8L156.91,230.56L153.18,234.2L153.15,235.29L152.07,236.39L152.07,236.39L151.08,235.37L150.97,235.09L150.94,234.63L151.08,234.05L152.07,233.07L152.07,230.45L151.97,229.29L151.83,228.77L151.19,227.46L151.13,226.98L151.2,226.51L151.89,225.25L152.47,223.63L152.5,223.16L152.4,222.72L151.97,222.25L151.08,221.81L150.33,221.29L148.33,219.29L147.85,218.53L147.33,216.63L146.92,215.98L146.63,215.73L144.21,214.31L143.24,213.92L141.15,212.71L140.28,211.95L139.36,210.38L138.05,208.79L137.12,207.01L135.82,205.43L134.46,202.76L134.28,201.73L134.18,198.99L133.88,198.17L133.37,197.51L132.7,196.87L131.96,196.35L131.02,195.92L130.46,195.45L129.25,193.35L127.08,190.2L127.08,190.2L127.29,189L127.35,187.9L127.27,187.4L126.64,186L126.52,185.49L126.52,184.44L126.85,183.5L128.01,181.54L128.89,180.81L131,179.71L132.3,179.2L133.63,178.37L134.18,177.85L135.58,176.1L136.96,174.8L137.7,174.31L139.02,173.7L142.55,170.49L143.29,170L144.61,169.39L145.63,168.51L146.35,167.57L147.03,166.22L148,165.07L148.54,164.26L149.01,162.24L149.64,160.93L149.96,158.85L150.12,158.4L150.32,158.15L150.58,157.96L151.03,157.81L152.1,157.73L173.86,158.26L174.96,158.14L175.66,157.83L176.19,157.31L176.5,156.61L176.75,154.46L177.12,153.54L179.52,150.91L180.48,149.12L181.61,147.9L187.32,142.37L188.45,141.14L188.9,140.31L190.78,135.54L190.78,135.54L194.07,140.59L194.94,142.36L195.61,143.15L199.71,147.31L200.73,148.48L202.11,151.15L202.48,152.11L203.22,153.4L203.6,154.36L204.35,155.64L204.74,156.61L205.45,157.91L205.56,158.3L205.56,159.55L205.24,160.38L204.07,162.56L202.47,164.49L202.07,165.43L201.37,166.69L201.2,167.61L201.06,170.51L200.94,170.95L200.28,172.23L200.16,172.66L200.01,174.5L199.84,175.37L199.13,176.64L198.73,177.57L197.12,179.51L196.76,180.32L196.75,181.56L197.11,182.39L199.28,184.73L199.86,185.61L200.38,188.52L200.38,188.52L197.61,194.15L196.04,196.1L195.8,196.53L195.58,197.64L195.57,201.26L195.48,202.42L195.34,202.97L193.56,206.44L193.37,207.46L193.25,211.28L192.92,212.22L192.05,214L191.63,214.6L190.91,215.31L190.16,215.8L189.41,216.08L188.84,216.16L181.09,216L179.99,216.08L179.5,216.23L178.92,216.63L177.15,218.65z"
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -830,7 +867,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -844,7 +881,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -858,7 +895,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -872,13 +909,21 @@ function App() {
         />
         <path
           className="land activeLand"
+          onMouseMove={(e) =>
+            hoverFunction({
+              name: e.target.attributes.title.nodeValue,
+              positionX: e.clientX,
+              positionY: e.clientY,
+            })
+          }
+          onMouseOut={hoverOutFunction}
           id="AZ-SUS"
           title="Şuşa"
           d="M235.15,374.08L238.28,373.38L241.14,373.21L242.18,373.04L244.66,371.78L246.6,370.49L247.34,370.21L247.87,370.13L248.95,370.13L249.99,370.33L251.3,371L252.83,371.43L253.57,371.75L255.52,373.09L258.8,374.93L259.4,375.41L259.63,375.7L259.96,376.39L260.35,377.89L262.17,381.37L262.81,382.09L265.14,384.09L266.41,385.53L266.74,386.38L267.04,389.35L267.45,390.44L268.05,391.57L268.05,391.57L266.4,394.57L264.97,396.33L264.15,397.96L262.74,399.7L260.95,402.96L260.95,402.96L260.27,399.45L260.12,396.91L259.98,395.97L259.65,395.28L259.12,394.75L258.42,394.41L257.89,394.3L255.65,394.19L254.01,394.27L253.5,394.38L252.18,395L251.19,395.27L250.42,395.62L249.91,396.14L249.11,397.41L248.73,398.35L248.06,399.61L247.61,401.62L246.48,403.68L246.01,404.26L245.72,404.47L245.05,404.7L244.57,404.66L244.15,404.49L242.16,403.32L241.62,402.76L240.53,401L239.82,400.27L239.07,399.75L238.32,399.46L237.28,399.41L236.78,399.5L235.93,399.84L235.53,399.92L235.22,399.88L234.28,399.4L233.75,398.9L233.41,398.12L233.31,397.06L233.33,393.22L233.42,392.17L233.55,391.68L234.66,389.52L236.51,387.21L237.29,385.52L237.38,385.15L236.82,383.46L236.61,379.15L236.48,378.64L235.8,377.28L235.64,376.75z"
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -892,7 +937,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -906,7 +951,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -920,7 +965,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -934,7 +979,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -948,7 +993,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -962,7 +1007,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -976,7 +1021,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -990,7 +1035,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -1004,7 +1049,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -1018,13 +1063,21 @@ function App() {
         />
         <path
           className="land activeLand"
+          onMouseMove={(e) =>
+            hoverFunction({
+              name: e.target.attributes.title.nodeValue,
+              positionX: e.clientX,
+              positionY: e.clientY,
+            })
+          }
+          onMouseOut={hoverOutFunction}
           id="AZ-ZAN"
           title="Zəngilan"
           d="M279,478.08L276.42,479.43L274.78,482.89L273.01,484.49L271.8,485.87L269.34,488.26L267.95,489.84L264.67,493.96L264.14,497.34L263.51,499.05L260.14,501.69L256.62,501.92L255.42,503.48L253.29,505.11L252.65,506.63L251.62,508L250.79,509.54L249.07,511.7L246.6,513.72L244.24,517.41L239.12,521.64L236.05,524.63L235.55,522.03L235.52,520.48L235.26,518.99L234.6,517.75L233.13,515.52L232.55,514.43L231.77,512.62L231.61,512.01L231.68,511.27L232,510.24L232.24,509.8L233.11,508.89L233.46,508.28L233.52,507.46L232.97,506.22L232.93,505.68L233.11,504.81L233.92,502.46L234.58,500.17L235.56,497.42L236.56,496.07L236.77,495.17L236.67,494.74L236.34,494.46L235.9,494.25L234.83,494.05L234.29,494.09L233.77,493.93L232.93,492.9L232.86,492.47L233.12,491.75L233.37,491.39L234.14,490.75L234.6,490.57L234.86,489.89L234.75,489.39L234.26,488.49L233.54,487.57L233.14,487.44L231.44,486.39L231.13,485.9L230.89,485.22L230.87,484.87L231.04,484.51L231.04,484.04L230.88,483.35L230.55,483.02L229.95,482.87L228.97,482.16L228.72,481.86L228.53,481.41L228.67,480.58L229.71,478.72L229.38,478.43L228.57,478.02L227.89,478.26L227.03,478.79L226.53,478.9L224.74,477.77L223.49,477.74L222.96,477.43L222.48,476.57L221.8,474.12L221.66,472.61L221.82,470.93L222.31,470.08L222.57,469.9L223.18,469.71L223.8,469.66L224.67,469.88L225.53,469.9L228.02,471.05L228.72,471.47L229.14,471.37L229.47,471.07L230.35,469.73L231.54,468.29L232.52,467.79L233.02,467.68L233.54,467.88L234,468.43L234.19,468.93L234.58,474.08L234.87,474.91L235.2,475.24L235.71,474.7L236.37,473.53L237,472.94L237.78,472.38L239.07,470.16L240.19,468.8L242.35,467.29L243.34,466.95L244.85,466.85L245.88,466.55L246.94,465.78L246.94,465.78L247.72,466.31L248.58,467.59L248.86,468.49L248.94,469.68L248.81,472.65L248.67,473.2L248.02,474.46L247.81,475.55L247.76,478.51L247.88,480.31L248.03,480.89L248.38,481.63L249.45,483.58L251.02,483.58L252.24,483.1L253.76,481.3L254.39,480.46L255.12,479.17L255.74,477.84L256.51,476.62L257.12,475.33L258.08,474.3L260.88,471.65L261.96,470.75L263.69,469.96L266.44,467.58L268.84,466.49L272.49,464.43L272.49,464.43L272.74,464.95L273.31,465.71L274.61,466.64L275.17,467.22L276.12,468.78L277.7,470.74L278.81,472.94L278.94,473.44L279.02,474.51z"
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
@@ -1038,7 +1091,7 @@ function App() {
         />
         <path
           className="land"
-          onMouseEnter={(e) =>
+          onMouseMove={(e) =>
             hoverFunction({
               name: e.target.attributes.title.nodeValue,
               positionX: e.clientX,
