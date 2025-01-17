@@ -29,3 +29,10 @@ body {
 .activeLand {
   fill: #cccccc;
 }
+
+.hoverTitle{
+  fill: #fff;
+  font-size: .8rem;
+  font-weight: bold;
+  text-anchor: middle;
+}
