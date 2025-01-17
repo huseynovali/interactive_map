@@ -4,10 +4,10 @@ function App() {
   const hoverFunction = (data) => {
     const hoverTitle = document.querySelector(".hoverTitle");
     hoverTitle.innerHTML = data.name;
-    hoverTitle.style.position = "absolute";
+
     hoverTitle.style.display = "block";
     hoverTitle.style.top = `${data.positionY - 30}px`;
-    hoverTitle.style.left = `${data.positionX - 20}px`;
+    hoverTitle.style.left = `${data.positionX - 10}px`;
   };
 
   const hoverOutFunction = () => {

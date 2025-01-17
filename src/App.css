@@ -30,11 +30,13 @@ body {
   fill: #cccccc;
 }
 
-.hoverTitle{
-  background-color:#ffffffb7 ;
+.hoverTitle {
+  position: absolute;
+  background-color: #ffffffc8;
   border: 1px solid #fff;
   padding: 5px;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: bold;
   text-anchor: middle;
 }
+
